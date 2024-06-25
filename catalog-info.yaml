@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: azafinance
+  name: TestRuby3
+  description: Rails microservice for TestRuby3.
+  tags:
+    - ruby
+    - rails
+    - microservice
+  links:
+    - url: https://test-ruby-3-staging.internal.bitpesa.co
+      title: Staging Url
+      icon: api
+      type: staging_url
+    - url: https://test-ruby-3-sandbox.internal.bitpesa.co
+      title: Sandbox Url
+      icon: api
+      type: sandbox_url
+    - url: https://test-ruby-3.internal.bitpesa.co
+      title: Production Url
+      icon: api
+      type: production_url
+  annotations:
+    github.com/project-slug: aza-backstage/test-ruby-3
+
+spec:
+  type: service
+  lifecycle: production
+  owner: azafinance
