@@ -20,13 +20,13 @@ updates:
         update-types: ["version-update:semver-major"]
     groups:
       # This is used to group updates instead of opening multiple PRs for version updates
-      version-updates:
-        applies-to: version-updates
-        patterns:
-        - "*"
-        update-types:
-        - "minor"
-        - "patch"
+      # version-updates:
+      #   applies-to: version-updates
+      #   patterns:
+      #   - "*"
+      #   update-types:
+      #   - "minor"
+      #   - "patch"
       # This is used to group updates instead of opening multiple PRs for security updates
       security-updates:
         applies-to: security-updates
