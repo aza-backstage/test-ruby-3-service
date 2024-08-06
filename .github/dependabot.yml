@@ -1,0 +1,37 @@
+version: 2
+updates:
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      # day: "sunday"
+      time: "09:00"
+    commit-message:
+      prefix: "deps"
+    open-pull-requests-limit: 1
+    labels:
+      - "dependencies"
+    allow:
+      # Allow both direct and indirect updates for all packages
+      - dependency-type: "all"
+    ignore:
+      - dependency-name: "*"
+      # Ignore all major version upgrades
+        update-types: ["version-update:semver-major"]
+    groups:
+      # This is used to group updates instead of opening multiple PRs for version updates
+      version-updates:
+        applies-to: version-updates
+        patterns:
+        - "*"
+        update-types:
+        - "minor"
+        - "patch"
+      # This is used to group updates instead of opening multiple PRs for security updates
+      security-updates:
+        applies-to: security-updates
+        patterns:
+        - "*"
+        update-types:
+        - "patch"
+        - "minor"
