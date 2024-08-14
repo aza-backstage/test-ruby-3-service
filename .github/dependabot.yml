@@ -8,7 +8,7 @@ registries:
 
 updates:
   - package-ecosystem: 'bundler'
-    # insecure-external-code-execution: allow
+    insecure-external-code-execution: allow
     directory: '/'
     registries: '*'
     schedule:
