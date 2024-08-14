@@ -46,3 +46,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+# aza-siem must be last gem to load in order to detect dependencies and let dotenv load ENVs
+gem 'aza-siem', git: 'git@github.com:bitpesa/aza-siem.git'
