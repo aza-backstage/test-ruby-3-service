@@ -4,7 +4,7 @@ registries:
     type: git
     url: https://github.com
     username: bolah2009
-    password: ${{secrets.GITHUB_TOKEN}}
+    password: ${{secrets.CI_GITHUB_TOKEN}}
 
 updates:
   - package-ecosystem: 'bundler'
