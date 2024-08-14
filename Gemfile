@@ -48,4 +48,4 @@ group :development do
 end
 
 # aza-siem must be last gem to load in order to detect dependencies and let dotenv load ENVs
-gem "aza-siem", git: "git@github.com:bitpesa/aza-siem.git"
+gem "aza-siem", git: "git@github.com:aza-backstage/aza-siem.git"
