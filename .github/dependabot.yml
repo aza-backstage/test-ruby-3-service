@@ -3,7 +3,7 @@ registries:
   github-bitpesa:
     type: git
     url: https://github.com
-    username: bolah2009
+    username: bitpesa-deploy
     password: ${{secrets.CI_GITHUB_TOKEN}}
 
 updates:
