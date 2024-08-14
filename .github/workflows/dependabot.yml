@@ -1,6 +1,11 @@
 name: Auto Merge Dependabot PRs
 on: pull_request
 
+permissions:
+  pull-requests: write
+  issues: write
+  repository-projects: write
+
 jobs:
   dependabot:
     runs-on: ubuntu-latest
@@ -10,16 +15,16 @@ jobs:
         id: metadata
         uses: dependabot/fetch-metadata@v2
         with:
-          github-token: '${{ secrets.AZA_DEPENDABOT_GHA }}'
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
       - name: Approve Dependabot patch version PRs
         if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{secrets.AZA_DEPENDABOT_GHA}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Enable auto-merge for Dependabot patch version PRs
         if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{secrets.AZA_DEPENDABOT_GHA}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
