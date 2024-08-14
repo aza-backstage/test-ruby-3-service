@@ -1,37 +1,45 @@
 version: 2
+registries:
+  github-bitpesa:
+    type: git
+    url: https://github.com
+    username: bitpesa-deploy
+    password: ${{secrets.CI_GITHUB_TOKEN}}
+
 updates:
-  - package-ecosystem: "bundler"
-    directory: "/"
+  - package-ecosystem: 'bundler'
+    directory: '/'
+    registries: '*'
     schedule:
-      interval: "weekly"
-      day: "sunday"
-      time: "09:00"
+      interval: 'weekly'
+      day: 'monday'
+      time: '06:00'
+    reviewers:
+      - 'bitpesa/engineering'
     commit-message:
-      prefix: "deps"
+      prefix: 'dependabot'
     open-pull-requests-limit: 3
     labels:
-      - "dependencies"
+      - 'dependencies'
     allow:
       # Allow both direct and indirect updates for all packages
-      - dependency-type: "all"
+      - dependency-type: 'all'
     ignore:
-      - dependency-name: "*"
-      # Ignore all major version upgrades
-        update-types: ["version-update:semver-major"]
+      - dependency-name: '*'
+        # Ignore all major version upgrades
+        update-types: [version-update:semver-major, version-update:semver-minor]
     groups:
       # This is used to group updates instead of opening multiple PRs for version updates
       version-updates:
         applies-to: version-updates
         patterns:
-        - "*"
+          - '*'
         update-types:
-        - "minor"
-        - "patch"
+          - 'patch'
       # This is used to group updates instead of opening multiple PRs for security updates
       security-updates:
         applies-to: security-updates
         patterns:
-        - "*"
+          - '*'
         update-types:
-        - "patch"
-        - "minor"
+          - 'patch'
