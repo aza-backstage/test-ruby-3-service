@@ -20,11 +20,6 @@ updates:
     commit-message:
       prefix: 'dependabot'
     open-pull-requests-limit: 3
-    labels:
-      - 'dependencies'
-    allow:
-      # Allow both direct and indirect updates for all packages
-      - dependency-type: 'all'
     ignore:
       - dependency-name: '*'
         # Ignore all major version upgrades

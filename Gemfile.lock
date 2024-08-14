@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:bitpesa/aza-siem.git
+  remote: git@github.com:aza-backstage/aza-siem.git
   revision: 67bc2875cd923c022d8dfdd43960c2c8e766f1d8
   specs:
     aza-siem (0.0.0)
