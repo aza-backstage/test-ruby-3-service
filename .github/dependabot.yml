@@ -19,7 +19,7 @@ updates:
       - 'bitpesa/engineering'
     commit-message:
       prefix: 'dependabot'
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 5
     ignore:
       - dependency-name: '*'
         # Ignore all major version upgrades
