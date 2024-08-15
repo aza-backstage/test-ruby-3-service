@@ -18,7 +18,7 @@ jobs:
         uses: ruby/setup-ruby@v1
       - name: Install dependencies
         env:
-          BUNDLE_GITHUB__COM: ${{ secrets.AZA_BACKSTAGE_CLASSIC }}:x-oauth-basic
+          BUNDLE_GITHUB__COM: x-access-token:${{ secrets.AZA_BACKSTAGE_CLASSIC }}
         run: bundle install
 
       - name: Check rubocop for generated project
