@@ -16,18 +16,28 @@ jobs:
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
+
+      - name: Close Dependabot PRs that are not patch version
+        if: steps.metadata.outputs.update-type != 'version-update:semver-patch'
+        run: gh pr close "$PR_URL" -d -c "Closing as it includes non-patch version update."
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Approve Dependabot patch version PRs (Required first approval)
         if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Approve Dependabot patch version PRs (Required second approval)
         if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GH_TOKEN: ${{secrets.AZA_BACKSTAGE_CLASSIC}}
+
       - name: Enable auto-merge for Dependabot patch version PRs
         if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
         run: gh pr merge --auto --squash "$PR_URL"
