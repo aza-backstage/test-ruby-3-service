@@ -1,4 +1,4 @@
-name: Rails Service
+name: Run Linters
 
 on:
   pull_request:
@@ -7,11 +7,8 @@ on:
       - master
 
 jobs:
-  build_and_test:
-    name: Build and test.
-    defaults:
-      run:
-        working-directory: rails-service/content
+  rubocop:
+    name: Run Rubocop
     runs-on: ubuntu-latest
 
     steps:
