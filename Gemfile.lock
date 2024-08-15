@@ -2043,10 +2043,7 @@ GEM
     rb-readline (0.5.5)
     rdoc (6.7.0)
       psych (>= 4.0.0)
-    redis (5.2.0)
-      redis-client (>= 0.22.0)
-    redis-client (0.22.2)
-      connection_pool
+    redis (4.8.1)
     redis-namespace (1.11.0)
       redis (>= 4)
     regexp_parser (2.9.2)
@@ -2143,10 +2140,10 @@ GEM
     select2-rails (4.0.13)
     shoulda-matchers (6.3.1)
       activesupport (>= 5.2.0)
-    sidekiq (6.5.5)
-      connection_pool (>= 2.2.2)
+    sidekiq (6.5.12)
+      connection_pool (>= 2.2.5, < 3)
       rack (~> 2.0)
-      redis (>= 4.5.0)
+      redis (>= 4.5.0, < 5)
     sidekiq-scheduler (5.0.6)
       rufus-scheduler (~> 3.2)
       sidekiq (>= 6, < 8)
@@ -2297,7 +2294,6 @@ DEPENDENCIES
   money-rails
   net-protocol
   net_http_ssl_fix
-  nokogiri (~> 1.16.5)
   optimizely-sdk
   paper_trail
   paper_trail-association_tracking
