@@ -14,11 +14,14 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GLOBAL_GH_SSH_KEY }}
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
       - name: Install dependencies
-        env:
-          BUNDLE_GITHUB__COM: x-access-token:${{ secrets.AZA_BACKSTAGE_CLASSIC }}
         run: bundle install
 
       - name: Check rubocop for generated project
