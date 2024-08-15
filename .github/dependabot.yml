@@ -20,12 +20,12 @@ updates:
     commit-message:
       prefix: 'dependabot'
     open-pull-requests-limit: 3
-    ignore:
-      - dependency-name: '*'
-        # Ignore all major and minor version upgrades
-        update-types: [version-update:semver-major, version-update:semver-minor]
-      # gem 'dalli', '3.2.6' # A newer version is breaking the app with a TypeError
-      - dependency-name: "dalli"
+    # ignore:
+    #   - dependency-name: '*'
+    #     # Ignore all major and minor version upgrades
+    #     update-types: [version-update:semver-major, version-update:semver-minor]
+    #   # gem 'dalli', '3.2.6' # A newer version is breaking the app with a TypeError
+    #   - dependency-name: "dalli"
     groups:
       # This is used to group updates instead of opening multiple PRs for version updates
       version-updates:
