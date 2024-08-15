@@ -101,7 +101,7 @@ gem "sass-rails"
 gem "scanf"
 gem "scrypt"
 gem "select2-rails"
-gem "sidekiq", "~> 6.5"
+gem "sidekiq", "~> 7.3"
 gem "sidekiq-scheduler"
 gem "sidekiq-status"
 gem "silencer", require: false
