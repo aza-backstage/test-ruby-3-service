@@ -1737,7 +1737,7 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
-    dalli (3.2.8)
+    dalli (3.2.6)
     dalli-elasticache (1.0.1)
       dalli (>= 2.0.0)
     datadog-ci (0.8.3)
@@ -2074,7 +2074,7 @@ GEM
     rspec-mocks (3.13.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-rails (6.1.4)
+    rspec-rails (6.1.3)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       railties (>= 6.1)
@@ -2275,7 +2275,7 @@ DEPENDENCIES
   caxlsx
   caxlsx_rails
   coffee-rails
-  dalli (= 3.2.8)
+  dalli (= 3.2.6)
   dalli-elasticache
   dotenv-rails
   ejs
@@ -2297,6 +2297,7 @@ DEPENDENCIES
   money-rails
   net-protocol
   net_http_ssl_fix
+  nokogiri (~> 1.16.5)
   optimizely-sdk
   paper_trail
   paper_trail-association_tracking
