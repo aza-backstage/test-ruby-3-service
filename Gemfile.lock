@@ -2143,10 +2143,12 @@ GEM
     select2-rails (4.0.13)
     shoulda-matchers (6.3.1)
       activesupport (>= 5.2.0)
-    sidekiq (6.5.5)
-      connection_pool (>= 2.2.2)
-      rack (~> 2.0)
-      redis (>= 4.5.0)
+    sidekiq (7.3.1)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      logger
+      rack (>= 2.2.4)
+      redis-client (>= 0.22.2)
     sidekiq-scheduler (5.0.6)
       rufus-scheduler (~> 3.2)
       sidekiq (>= 6, < 8)
@@ -2297,7 +2299,6 @@ DEPENDENCIES
   money-rails
   net-protocol
   net_http_ssl_fix
-  nokogiri (~> 1.16.5)
   optimizely-sdk
   paper_trail
   paper_trail-association_tracking
@@ -2334,7 +2335,7 @@ DEPENDENCIES
   scrypt
   select2-rails
   shoulda-matchers
-  sidekiq (~> 6.5)
+  sidekiq (~> 7.3)
   sidekiq-scheduler
   sidekiq-status
   silencer
