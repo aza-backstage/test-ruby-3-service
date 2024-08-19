@@ -1904,7 +1904,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2024.0806)
     mini_mime (1.1.5)
-    minitest (5.25.0)
+    minitest (5.25.1)
     monetize (1.13.0)
       money (~> 6.12)
     money (6.19.0)
@@ -2141,7 +2141,7 @@ GEM
       ffi-compiler (>= 1.0, < 2.0)
       rake (>= 9, < 14)
     select2-rails (4.0.13)
-    shoulda-matchers (6.3.1)
+    shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
     sidekiq (6.5.5)
       connection_pool (>= 2.2.2)
@@ -2297,7 +2297,6 @@ DEPENDENCIES
   money-rails
   net-protocol
   net_http_ssl_fix
-  nokogiri (~> 1.16.5)
   optimizely-sdk
   paper_trail
   paper_trail-association_tracking
