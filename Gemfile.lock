@@ -1686,7 +1686,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
     bootstrap-select-rails (1.13.8)
-    brakeman (6.1.2)
+    brakeman (6.2.1)
       racc
     builder (3.3.0)
     bundler-audit (0.9.1)
