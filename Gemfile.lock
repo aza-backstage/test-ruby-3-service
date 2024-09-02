@@ -1884,8 +1884,8 @@ GEM
       activesupport (>= 4)
       railties (>= 4)
       request_store (~> 1.0)
-    lograge-sql (2.3.2)
-      activerecord (>= 5, < 7.2)
+    lograge-sql (2.4.0)
+      activerecord (>= 5, < 7.3)
       lograge (~> 0.11)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -2185,7 +2185,7 @@ GEM
     temple (0.10.3)
     terrapin (1.0.1)
       climate_control
-    thor (1.3.1)
+    thor (1.3.2)
     thread_safe (0.3.6)
     thwait (0.2.0)
       e2mmap
