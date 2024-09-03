@@ -21,21 +21,21 @@ jobs:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Close Dependabot PRs that are not patch version
-        if: steps.metadata.outputs.update-type != 'version-update:semver-patch'
+        if: steps.metadata.outputs.update-type != 'version-update:semver-patch' && steps.metadata.outputs.dependency-group != 'monthly-version-updates'
         run: gh pr close "$PR_URL" -c "Closing as it includes non-patch version update."
 
       - name: Approve Dependabot patch version PRs (Required first approval)
-        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch' && steps.metadata.outputs.dependency-group != 'monthly-version-updates'
         run: gh pr review --approve "$PR_URL"
 
       - name: Approve Dependabot patch version PRs (Required second approval)
-        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch' && steps.metadata.outputs.dependency-group != 'monthly-version-updates'
         run: gh pr review --approve "$PR_URL"
         env:
           GH_TOKEN: ${{secrets.AZA_BACKSTAGE_CLASSIC}}
 
       - name: Enable auto-merge for Dependabot patch version PRs
-        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch' && steps.metadata.outputs.dependency-group != 'monthly-version-updates'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           GH_TOKEN: ${{secrets.AZA_BACKSTAGE_CLASSIC}}

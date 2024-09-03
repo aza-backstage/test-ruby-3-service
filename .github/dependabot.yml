@@ -28,7 +28,7 @@ updates:
     #   - dependency-name: "dalli"
     groups:
       # This is used to group updates instead of opening multiple PRs for version updates
-      version-updates:
+      weekly-version-updates:
         applies-to: version-updates
         patterns:
           - '*'
@@ -61,7 +61,7 @@ updates:
     #   - dependency-name: "dalli"
     groups:
       # This is used to group updates instead of opening multiple PRs for version updates
-      version-updates:
+      monthly-version-updates:
         applies-to: version-updates
         patterns:
           - '*'
